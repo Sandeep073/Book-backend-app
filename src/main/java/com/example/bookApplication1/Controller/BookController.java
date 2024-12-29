@@ -11,8 +11,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/books")  // Keep the URL consistent
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api/books")
+@CrossOrigin(origins = "http://localhost:4300")
 public class BookController {
 
     private final BookService bookService;
@@ -38,12 +38,9 @@ public class BookController {
     @GetMapping
     public ResponseEntity<List<Book>> getAllBooks() {
         List<Book> books = bookService.getAllBooks();
-
-        // Filtering books with non-null titles
         List<Book> filteredBooks = books.stream()
                 .filter(book -> book.getTitle() != null)
                 .collect(Collectors.toList());
-
         return ResponseEntity.ok(filteredBooks);
     }
 
