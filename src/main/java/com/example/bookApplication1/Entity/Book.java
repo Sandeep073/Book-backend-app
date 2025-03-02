@@ -12,6 +12,7 @@ public class Book {
 
     private String title;
     private String author;
+    private String genre;
     private Double price;
 
     // Constructors
@@ -20,7 +21,9 @@ public class Book {
     public Book(String title, String author, Double price) {
         this.title = title;
         this.author = author;
+        this.genre = genre;
         this.price = price;
+
     }
 
     // Getters and Setters
@@ -48,6 +51,14 @@ public class Book {
         this.author = author;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
     public Double getPrice() {
         return price;
     }
@@ -55,4 +66,6 @@ public class Book {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+
 }
